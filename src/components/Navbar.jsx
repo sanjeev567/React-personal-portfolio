@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { styled } from "styled-components";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
-import { DarkModeContext } from "../context/darkModeContext";
+import DarkModeContext from "../context/darkModeContext";
 import LightModeIcon from "@mui/icons-material/LightMode";
 const Container = styled.div`
   width: 100%;

@@ -7,7 +7,9 @@ import Projects from "./pages/Projects";
 import Contacts from "./pages/Contacts";
 import Footer from "./pages/Footer";
 import { useContext } from "react";
-import { DarkModeContext } from "./context/DarkModeContext";
+// import { DarkModeContext } from "./context/DarkModeContext";
+import DarkModeContext from "./context/DarkModeContext";
+
 import { ThemeProvider } from "styled-components";
 import theme from "./theme";
 
@@ -15,10 +17,8 @@ const Main = styled.div`
   width: 100%;
   max-width: 1100px;
   background: ${(props) => props.theme.background};
-  /* background: black; */
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
   justify-content: space-between;
   height: auto;
   margin: 0 auto;
