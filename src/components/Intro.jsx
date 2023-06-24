@@ -1,4 +1,3 @@
-import React, { useContext } from "react";
 import { styled } from "styled-components";
 import IntroImg from "../assets/sanjeev.png";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -8,8 +7,6 @@ import SendIcon from "@mui/icons-material/Send";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import theme from "../theme";
-import { DarkModeContext } from "../context/darkModeContext";
 
 const Wrapper = styled.div`
   display: flex;
@@ -52,14 +49,7 @@ const Left = styled.div`
   background: ${(props) => props.theme.background};
 `;
 
-// const ImgBox = styled.div`
-//   width: 200px;
-//   height: 200px;
-//   z-index: 3;
-// `;
 const Img = styled.img`
-  /* width: 100%;
-  height: 100%; */
   width: 200px;
   height: 200px;
   z-index: 3;
@@ -69,7 +59,6 @@ const Img = styled.img`
   margin-top: 20px;
   animation: animate 5s infinite ease alternate;
   overflow: hidden;
-  /* background: ${(props) => props.theme.background}; */
 
   @keyframes animate {
     to {
@@ -81,7 +70,7 @@ const Social = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 2px solid red; */
+
   z-index: 5;
   margin-top: 30px;
   position: absolute;
@@ -103,7 +92,6 @@ const Social = styled.div`
 const Right = styled.div`
   display: flex;
   flex-direction: column;
-  /* border: 2px solid green; */
   background: ${(props) => props.theme.background};
 
   flex: 2;
@@ -134,7 +122,6 @@ const Desc = styled.p`
 `;
 
 const ContactBox = styled.span`
-  /* border: 2px solid red; */
   border-radius: 10px;
   margin: 30px 0;
   display: flex;
@@ -174,9 +161,8 @@ const CanvasContainer = styled.div`
 `;
 
 const Intro = () => {
-  const { darkMode } = useContext(DarkModeContext);
   return (
-    <Wrapper theme={darkMode ? theme.DarkMode : theme.lightMode}>
+    <Wrapper>
       <Left>
         <CanvasContainer>
           <Canvas camera={{ fov: 25, position: [5, 5, 5] }} id="canvasId">

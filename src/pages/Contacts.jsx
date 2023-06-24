@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 import Contact from "../components/Contact";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import theme from "../theme";
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -35,8 +34,6 @@ const Wrapper = styled.div`
 `;
 
 const ContactHeading = styled.div`
-  /* align-self: flex-start;
-  margin: 20px; */
   position: absolute;
   top: 20px;
   left: 20px;

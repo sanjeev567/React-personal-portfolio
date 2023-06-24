@@ -1,13 +1,10 @@
 import React, { useRef, useState } from "react";
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-// import required modules
 import { Keyboard, Pagination, Navigation } from "swiper";
 import { styled } from "styled-components";
 
@@ -20,25 +17,6 @@ const Wrapper = styled.div`
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 5px;
-  /* margin: auto; */
-
-  /* #app {
-    height: 100%;
-  }
-  html,
-  body {
-    position: relative;
-    height: 100%;
-  }
-
-  body {
-    background: #eee;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin: 0;
-    padding: 0;
-  } */
 
   .swiper {
     width: 98%;
@@ -46,7 +24,6 @@ const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     margin: auto;
-    /* border: 2px solid green; */
     height: 100%;
 
     .swiper-button-prev {
@@ -62,7 +39,6 @@ const Wrapper = styled.div`
     font-size: 18px;
     background: #fff;
 
-    /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,15 +59,12 @@ const Wrapper = styled.div`
 `;
 
 const CustomNavigation = styled(Navigation)`
-  /* Position the navigation arrows outside the container */
   .swiper-button-prev,
   .swiper-button-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 10;
-    /* Customize the arrow styles as per your requirements */
-    /* ... */
   }
 
   .swiper-button-prev {

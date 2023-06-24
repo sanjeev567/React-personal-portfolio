@@ -5,16 +5,13 @@ import { useState } from "react";
 import CallIcon from "@mui/icons-material/Call";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import EmailIcon from "@mui/icons-material/Email";
 import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 import ChatIcon from "@mui/icons-material/Chat";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import theme from "../theme";
-import dotenv from "dotenv";
-// dotenv.config();
+
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -49,7 +46,6 @@ const SingleLink = styled.span`
   }
 `;
 const Text = styled.span`
-  /* border: 2px solid blue; */
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
 `;
@@ -73,8 +69,6 @@ const ContactForm = styled.form`
   align-items: center;
   justify-content: center;
   gap: 20px;
-  /* padding-right: 20px; */
-  /* border: 2px solid red; */
   background: #fff;
   padding: 10px 0;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
@@ -87,7 +81,6 @@ const InputWrapper = styled.span`
   justify-content: space-between;
   border: 1px solid gray;
   padding: 10px;
-  /* margin: 10px 0; */
   border-radius: 10px;
   width: 80%;
   .formIcon {

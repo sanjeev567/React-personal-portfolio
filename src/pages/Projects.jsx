@@ -1,7 +1,6 @@
 import { styled } from "styled-components";
 import ProjectSlider from "../components/ProjectSlider";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import theme from "../theme";
 
 const Wrapper = styled.div`
   display: flex;
@@ -37,8 +36,6 @@ const Wrapper = styled.div`
 `;
 
 const ProjectHeading = styled.div`
-  /* align-self: flex-start;
-  margin: 20px; */
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
   position: absolute;

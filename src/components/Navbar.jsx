@@ -2,8 +2,6 @@ import { useContext } from "react";
 import { styled } from "styled-components";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
-import theme from "../theme";
-// import { DarkModeContext, darkMode } from "../context/DarkModeContext";
 import { DarkModeContext } from "../context/darkModeContext";
 import LightModeIcon from "@mui/icons-material/LightMode";
 const Container = styled.div`
@@ -48,7 +46,7 @@ const RightUlLI = styled.li`
 const Navbar = () => {
   const { dispatch, darkMode } = useContext(DarkModeContext);
   return (
-    <Container theme={darkMode ? theme.DarkMode : theme.lightMode}>
+    <Container>
       <Left>
         <LeftHeading>Sanjeev</LeftHeading>
       </Left>
@@ -57,8 +55,7 @@ const Navbar = () => {
           <RightUlLI>Home</RightUlLI>
           <RightUlLI>About</RightUlLI>
           <RightUlLI>Skills</RightUlLI>
-          <RightUlLI>Services</RightUlLI>
-          <RightUlLI>Portfolio</RightUlLI>
+          <RightUlLI>Projects</RightUlLI>
           <RightUlLI>ContactMe</RightUlLI>
           {darkMode ? (
             <RightUlLI onClick={() => dispatch({ type: "TOGGLE" })}>

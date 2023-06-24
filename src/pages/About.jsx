@@ -2,9 +2,6 @@ import { styled } from "styled-components";
 import AboutImg from "../assets/sanjeev.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-import React, { useContext } from "react";
-import theme from "../theme";
-import { DarkModeContext } from "../context/darkModeContext";
 
 const Wrapper = styled.div`
   display: flex;
@@ -138,7 +135,6 @@ const DownloadCv = styled.span`
   padding: 20px;
 `;
 const About = () => {
-  // const { darkMode } = useContext(DarkModeContext);
   return (
     <Wrapper>
       <Head1>About Me</Head1>
