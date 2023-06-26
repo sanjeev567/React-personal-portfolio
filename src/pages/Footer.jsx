@@ -2,12 +2,11 @@ import { styled } from "styled-components";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-
+import { smallScreen } from "../mediaQueries";
 const FooterWrapper = styled.div`
   display: flex;
   min-height: 40vh;
   background-color: #6e57e0;
-  /* color: #fff; */
   width: 100%;
   flex-direction: column;
   position: relative;
@@ -22,6 +21,11 @@ const Box = styled.div`
   margin: auto;
   gap: 30px;
   margin-top: 20px;
+  ${smallScreen`
+    flex-direction: column;
+    
+    gap: 5px;
+  `}
 `;
 const Headline = styled.div`
   display: flex;
@@ -31,6 +35,11 @@ const Headline = styled.div`
   justify-content: center;
   flex: 1;
   background: transparent;
+  ${smallScreen`
+   gap: 5px;
+  transform: translateY(-25%);
+
+ `}
 `;
 const Showcase = styled.div`
   display: flex;
@@ -39,6 +48,10 @@ const Showcase = styled.div`
   background: transparent;
   gap: 30px;
   flex: 1;
+  ${smallScreen`
+   
+   gap: 15px;
+ `}
 `;
 const Social = styled.div`
   display: flex;
@@ -60,6 +73,13 @@ const SocialWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   background: transparent;
+  ${smallScreen`
+   
+   width: 150px;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+ `}
 `;
 const Title = styled.div`
   font-size: 2rem;
@@ -80,7 +100,7 @@ const Desc = styled.p`
 
 const Footer = () => {
   return (
-    <FooterWrapper>
+    <FooterWrapper id="footer">
       <Box>
         <Headline>
           <Title>Sanjeev</Title>
@@ -93,9 +113,30 @@ const Footer = () => {
         </Showcase>
         <Social>
           <SocialWrapper>
-            <FacebookOutlinedIcon className="socialIcon" />
-            <InstagramIcon className="socialIcon" />
-            <TwitterIcon className="socialIcon" />
+            <a
+              style={{ background: "transparent", color: "#6e57e0" }}
+              href="https://www.facebook.com/profile.php?id=100008144056536"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FacebookOutlinedIcon className="socialIcon" />
+            </a>
+            <a
+              style={{ background: "transparent", color: "#6e57e0" }}
+              href="https://www.instagram.com/sanjeev_8feb/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <InstagramIcon className="socialIcon" />
+            </a>
+            <a
+              style={{ background: "transparent", color: "#6e57e0" }}
+              href="https://twitter.com/19cs48"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <TwitterIcon className="socialIcon" />
+            </a>
           </SocialWrapper>
         </Social>
       </Box>

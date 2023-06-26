@@ -45,7 +45,7 @@ const Skill = styled.div`
   flex-direction: column;
   position: relative;
   background: ${(props) => props.theme.background};
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
 
   .arrowDown {
     position: absolute;
@@ -87,7 +87,7 @@ const Title = styled.h1`
 `;
 const Desc = styled.h3`
   background: ${(props) => props.theme.background};
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.paraColor.color};
 `;
 const Skills = () => {
   const skillObj = {
@@ -97,7 +97,7 @@ const Skills = () => {
   };
   return (
     <>
-      <Skill>
+      <Skill id="skills">
         <Intro>
           <Title>Skills</Title>
           <Desc>My Skill Set</Desc>

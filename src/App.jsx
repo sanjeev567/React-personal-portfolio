@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import Front from "./pages/Front";
 import About from "./pages/About";
@@ -7,11 +7,10 @@ import Projects from "./pages/Projects";
 import Contacts from "./pages/Contacts";
 import Footer from "./pages/Footer";
 import { useContext } from "react";
-// import { DarkModeContext } from "./context/DarkModeContext";
 import DarkModeContext from "./context/DarkModeContext";
-
 import { ThemeProvider } from "styled-components";
 import theme from "./theme";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 const Main = styled.div`
   width: 100%;
@@ -26,7 +25,9 @@ const Main = styled.div`
     5px 0 5px -5px rgba(0, 0, 0, 0.5);
   box-shadow: -5px 0 5px -5px rgba(0, 0, 0, 0.5),
     5px 0 5px -5px rgba(0, 0, 0, 0.5);
+  position: relative;
 `;
+
 const App = () => {
   const { darkMode } = useContext(DarkModeContext);
 

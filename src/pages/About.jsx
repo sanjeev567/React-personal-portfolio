@@ -2,7 +2,8 @@ import { styled } from "styled-components";
 import AboutImg from "../assets/sanjeev.png";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
-
+import resume from "../assets/resumeL.pdf";
+import { smallScreen, mediumScreen } from "../mediaQueries";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -37,17 +38,21 @@ const Wrapper = styled.div`
 
 const Head1 = styled.h1`
   align-self: flex-start;
-  padding-left: 10px;
+  /* padding-left: 10px; */
+  position: absolute;
+  top: 20px;
+  left: 20px;
   background: transparent;
   color: ${(props) => props.theme.color};
 `;
 const Para1 = styled.p`
   align-self: flex-start;
-  padding-left: 15px;
-  margin-bottom: 80px;
+  position: absolute;
+  top: 70px;
+  left: 20px;
   color: #555;
   background: transparent;
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.paraColor.color};
 `;
 const WrapperItem = styled.div`
   display: flex;
@@ -58,6 +63,15 @@ const WrapperItem = styled.div`
   padding: 20px;
   background: transparent;
   color: ${(props) => props.theme.color};
+  ${smallScreen`
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: 0;
+  gap: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  `}
 `;
 const WrapperItems = styled.div`
   flex: 1;
@@ -69,6 +83,12 @@ const WrapperItems = styled.div`
   padding: 30px;
   background: transparent;
   color: ${(props) => props.theme.color};
+  ${smallScreen`
+    padding: 0 20px;
+    position: relative;
+    top: -50px;
+
+  `}
 `;
 
 const Img = styled.img`
@@ -112,7 +132,7 @@ const AchiveSpan = styled.span`
 const AchiveHeading = styled.h1`
   color: #333;
   background: transparent;
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.headingColor.color};
 `;
 
 const AchivePara = styled.p`
@@ -122,7 +142,6 @@ const AchivePara = styled.p`
 `;
 
 const DownloadCv = styled.span`
-  align-self: flex-start;
   background: #6e57e0;
   color: #fff;
   position: absolute;
@@ -133,10 +152,19 @@ const DownloadCv = styled.span`
   gap: 20px;
   width: max-content;
   padding: 20px;
+  ${smallScreen`
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: fit-content;
+    transform: translate(60%, 140%)
+
+  `}
 `;
 const About = () => {
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <Head1>About Me</Head1>
       <Para1>My Introduction</Para1>
       <WrapperItem>
@@ -162,10 +190,14 @@ const About = () => {
               <AchiveHeading>05+</AchiveHeading>
               <AchivePara>Company Worked</AchivePara>
             </AchiveSpan>
-            <DownloadCv>
-              Download CV{" "}
-              <FileDownloadOutlinedIcon style={{ background: "transparent" }} />
-            </DownloadCv>
+            <a href={resume} download>
+              <DownloadCv>
+                Download CV
+                <FileDownloadOutlinedIcon
+                  style={{ background: "transparent" }}
+                />
+              </DownloadCv>
+            </a>
           </Achievements>
         </WrapperItems>
       </WrapperItem>

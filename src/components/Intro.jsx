@@ -7,15 +7,25 @@ import SendIcon from "@mui/icons-material/Send";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
+import { Link } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
+import { smallScreen, mediumScreen } from "../mediaQueries";
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
   background: ${(props) => props.theme.background};
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 40px;
   min-height: 60vh;
   position: relative;
+
+  /* Media queries for smaller device */
+  ${smallScreen`
+      flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    gap: 20px
+  `}
 
   .arrowDown {
     position: absolute;
@@ -26,6 +36,9 @@ const Wrapper = styled.div`
     cursor: pointer;
     background: transparent;
     color: ${(props) => props.theme.color};
+    ${smallScreen`
+      bottom: -40px;
+    `}
 
     @keyframes animateArow {
       0% {
@@ -47,6 +60,12 @@ const Left = styled.div`
   flex: 1;
   height: 45vh;
   background: ${(props) => props.theme.background};
+  ${smallScreen`
+    //  border: 2px solid green;
+     transform: translateY(30px);
+     overflow: hidden;
+     width: 400px;
+  `}
 `;
 
 const Img = styled.img`
@@ -59,6 +78,12 @@ const Img = styled.img`
   margin-top: 20px;
   animation: animate 5s infinite ease alternate;
   overflow: hidden;
+  ${smallScreen`
+    margin-top: 0px;
+    position: relative;
+    top: 0px;
+    left: 0px
+  `}
 
   @keyframes animate {
     to {
@@ -81,6 +106,12 @@ const Social = styled.div`
   background: transparent;
   gap: 20px;
   color: #6e57e0;
+  ${smallScreen`
+    flex-direction: column;
+    top: -30px;
+    left: -300px;
+    gap: 0;
+  `}
 
   .Icon {
     font-size: 2.3rem;
@@ -94,7 +125,11 @@ const Right = styled.div`
   flex-direction: column;
   background: ${(props) => props.theme.background};
 
-  flex: 2;
+  flex: 1;
+  ${smallScreen`
+    justify-content: center;
+    align-items: center;
+  `}
 `;
 
 const Title = styled.h1`
@@ -102,7 +137,7 @@ const Title = styled.h1`
   font-weight: 500;
   margin-bottom: 10px;
   background: transparent;
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.headingColor.color};
 `;
 
 const SubTitle = styled.h3`
@@ -110,7 +145,7 @@ const SubTitle = styled.h3`
   margin-bottom: 20px;
   color: #444;
   background: transparent;
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.paraColor.color};
 `;
 
 const Desc = styled.p`
@@ -118,7 +153,8 @@ const Desc = styled.p`
   width: 70%;
   font-size: 18px;
   background: transparent;
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.headingColor.color};
+  text-align: center;
 `;
 
 const ContactBox = styled.span`
@@ -155,8 +191,14 @@ const CanvasContainer = styled.div`
   right: 0;
   margin: auto;
   background-color: black;
+
   #canvasId > div > canvas {
     background: ${(props) => props.theme.background};
+    ${smallScreen`
+      position: relative;
+      top: 15px;
+      
+    `}
   }
 `;
 
@@ -183,9 +225,30 @@ const Intro = () => {
         <Img src={IntroImg} alt="IntroImgErr" />
         {/* </ImgBox> */}
         <Social>
-          <LinkedInIcon className="Icon" />
-          <GitHubIcon className="Icon" />
-          <TwitterIcon className="Icon" />
+          <a
+            style={{ background: "transparent", color: "#6e57e0" }}
+            href="https://linkedin.com/in/sanjeev-singh-8feb/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedInIcon className="Icon" />
+          </a>
+          <a
+            style={{ background: "transparent", color: "#6e57e0" }}
+            href="https://github.com/sanjeev567"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon className="Icon" />
+          </a>
+          <a
+            style={{ background: "transparent", color: "#6e57e0" }}
+            href="https://twitter.com/19cs48"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <TwitterIcon className="Icon" />
+          </a>
         </Social>
       </Left>
 
@@ -196,10 +259,18 @@ const Intro = () => {
           High level experience in web design and development knowledge,
           producing quality work.
         </Desc>
-        <ContactBox>
-          <ContactTitle>Contact Me</ContactTitle>
-          <SendIcon className="sendIcon" />
-        </ContactBox>
+        <Link
+          to="contacts"
+          smooth={true}
+          duration={500}
+          spy={true}
+          style={{ background: "transparent" }}
+        >
+          <ContactBox>
+            <ContactTitle>Contact Me</ContactTitle>
+            <SendIcon className="sendIcon" />
+          </ContactBox>
+        </Link>
       </Right>
       <KeyboardArrowDownIcon className="arrowDown" />
     </Wrapper>

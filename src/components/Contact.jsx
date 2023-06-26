@@ -11,7 +11,7 @@ import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutli
 import ChatIcon from "@mui/icons-material/Chat";
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
-
+import { smallScreen, mediumScreen } from "../mediaQueries";
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -20,6 +20,10 @@ const Wrapper = styled.div`
   width: 90%;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
+  ${smallScreen`
+    flex-direction: column;
+    
+  `}
 `;
 const ContactLinks = styled.div`
   flex: 1;
@@ -30,6 +34,12 @@ const ContactLinks = styled.div`
   padding-left: 20px;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
+  ${smallScreen`
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  `}
 `;
 const SingleLink = styled.span`
   display: flex;
@@ -38,11 +48,20 @@ const SingleLink = styled.span`
   cursor: pointer;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
+  ${smallScreen`
+    flex: 1;
+  gap: 5px;
+  align-items: center;
+  `}
 
   .linkIcon {
     font-size: 2.2rem;
     color: #6e57e0;
     background: transparent;
+    ${smallScreen`
+       font-size: 1.5rem;
+
+  `}
   }
 `;
 const Text = styled.span`
@@ -54,12 +73,20 @@ const Title = styled.h1`
   font-weight: 500;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
+  ${smallScreen`
+       font-size: 1.2rem;
+
+  `}
 `;
 const Desc = styled.h3`
   color: #777;
   font-weight: 300;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
+  ${smallScreen`
+       font-size: 1rem;
+
+  `}
 `;
 
 const ContactForm = styled.form`
@@ -73,6 +100,11 @@ const ContactForm = styled.form`
   padding: 10px 0;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
+  ${smallScreen`
+       width: 90%;
+       gap: 10px
+
+  `}
 `;
 
 const InputWrapper = styled.span`
@@ -90,6 +122,10 @@ const InputWrapper = styled.span`
   &:focus-within {
     border-color: blue;
   }
+  ${smallScreen`
+       padding: 5px;
+
+  `}
 `;
 const Input = styled.input`
   border: none;
@@ -115,6 +151,10 @@ const Button = styled.button`
   border-radius: 10px;
   color: #fff;
   cursor: pointer;
+  ${smallScreen`
+    margin: 0;
+    margin-top: 20px;
+  `}
 `;
 
 const SuccessMessage = styled.span`
@@ -161,24 +201,36 @@ const Contact = () => {
       <ContactLinks>
         <SingleLink>
           <CallIcon className="linkIcon" />
-          <Text>
-            <Title>Call</Title>
-            <Desc>+91 7254903908</Desc>
-          </Text>
+          <a href="+91 7254903908" style={{ textDecoration: "none" }}>
+            <Text>
+              <Title>Call</Title>
+              <Desc>+91 7254903908</Desc>
+            </Text>
+          </a>
         </SingleLink>
         <SingleLink>
           <WhatsAppIcon className="linkIcon" />
-          <Text>
-            <Title>WhatsApp</Title>
-            <Desc>+91 7254903908</Desc>
-          </Text>
+          <a
+            href="https://wa.me/917254903908?text=Hi%20there,"
+            style={{ textDecoration: "none" }}
+          >
+            <Text>
+              <Title>WhatsApp</Title>
+              <Desc>+91 7254903908</Desc>
+            </Text>
+          </a>
         </SingleLink>
         <SingleLink>
           <EmailIcon className="linkIcon" />
-          <Text>
-            <Title>Email</Title>
-            <Desc>sanjeevsingh@gmail.com</Desc>
-          </Text>
+          <a
+            href="mailto:sanjeevsingh.ss342@gmail.com"
+            style={{ textDecoration: "none" }}
+          >
+            <Text>
+              <Title>Email</Title>
+              <Desc>sanjeevsingh@gmail.com</Desc>
+            </Text>
+          </a>
         </SingleLink>
         <SingleLink>
           <LocationOnIcon className="linkIcon" />
@@ -207,7 +259,7 @@ const Contact = () => {
           <DriveFileRenameOutlineIcon className="formIcon" />
         </InputWrapper>
         <InputWrapper>
-          <Input type="textarea" name="message" placeholder="Enter Name: " />
+          <Input type="textarea" name="message" placeholder="Enter Message: " />
           <ChatIcon className="formIcon" />
         </InputWrapper>
 

@@ -1,9 +1,6 @@
-import React, { useContext } from "react";
 import { styled } from "styled-components";
 import Intro from "../components/Intro";
 import Navbar from "../components/Navbar";
-import DarkModeContext from "../context/darkModeContext";
-import theme from "../theme";
 
 const Wrapper = styled.div`
   min-height: 100vh;
@@ -12,9 +9,8 @@ const Wrapper = styled.div`
 `;
 
 const front = () => {
-  const { darkMode } = useContext(DarkModeContext);
   return (
-    <Wrapper theme={darkMode ? theme.DarkMode : theme.lightMode}>
+    <Wrapper id="front">
       <Navbar />
       <Intro />
     </Wrapper>

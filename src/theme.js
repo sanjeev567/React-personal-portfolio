@@ -5,12 +5,24 @@ const theme = {
     navbar: {
       background: "#fff",
     },
+    headingColor: {
+      color: "#222",
+    },
+    paraColor: {
+      color: "#777",
+    },
   },
   DarkMode: {
-    background: "#000",
+    background: "#181627",
     color: "#fff",
     navbar: {
       background: "#222",
+    },
+    headingColor: {
+      color: "#fbfbfb",
+    },
+    paraColor: {
+      color: "gray",
     },
   },
 };

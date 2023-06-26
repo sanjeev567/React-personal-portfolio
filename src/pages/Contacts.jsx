@@ -48,12 +48,12 @@ const Title = styled.h1`
 
 const Desc = styled.h3`
   background: ${(props) => props.theme.background};
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.paraColor.color};
 `;
 
 const Contacts = () => {
   return (
-    <Wrapper>
+    <Wrapper id="contacts">
       <ContactHeading>
         <Title>Contact</Title>
         <Desc>Contact through either ways: </Desc>

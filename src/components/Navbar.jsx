@@ -1,9 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { styled } from "styled-components";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
 import DarkModeContext from "../context/darkModeContext";
 import LightModeIcon from "@mui/icons-material/LightMode";
+
+import { Link } from "react-scroll";
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -36,6 +38,11 @@ const RightUl = styled.ul`
   align-items: center;
   justify-content: start;
   background: ${(props) => props.theme.navbar.background};
+
+  .active-link {
+    background: transparent;
+    cursor: pointer;
+  }
 `;
 const RightUlLI = styled.li`
   margin-right: 15px;
@@ -45,18 +52,95 @@ const RightUlLI = styled.li`
 
 const Navbar = () => {
   const { dispatch, darkMode } = useContext(DarkModeContext);
+  const [isActive, setIsActive] = useState("home");
+
+  const handleIsActive = (type) => {
+    setIsActive(type);
+  };
   return (
     <Container>
       <Left>
-        <LeftHeading>Sanjeev</LeftHeading>
+        <LeftHeading>Portfolio</LeftHeading>
       </Left>
       <Right>
         <RightUl>
-          <RightUlLI>Home</RightUlLI>
-          <RightUlLI>About</RightUlLI>
-          <RightUlLI>Skills</RightUlLI>
-          <RightUlLI>Projects</RightUlLI>
-          <RightUlLI>ContactMe</RightUlLI>
+          <Link
+            onClick={() => handleIsActive("home")}
+            to="front"
+            smooth={true}
+            duration={500}
+            spy={true}
+            // activeClass="active-link"
+            className="active-link"
+            // style={{ background: "transparent" }}
+          >
+            <RightUlLI style={isActive === "home" ? { color: "#6e57e0" } : {}}>
+              Home
+            </RightUlLI>
+          </Link>
+          <Link
+            onClick={() => handleIsActive("about")}
+            to="about"
+            smooth={true}
+            duration={500}
+            spy={true}
+            // activeClass="active-link"
+            className="active-link"
+            // style={{ background: "transparent" }}
+          >
+            <RightUlLI style={isActive === "about" ? { color: "#6e57e0" } : {}}>
+              about
+            </RightUlLI>
+          </Link>
+          <Link
+            onClick={() => handleIsActive("skills")}
+            to="skills"
+            smooth={true}
+            duration={500}
+            spy={true}
+            // activeClass="active-link"
+            className="active-link"
+            // style={{ background: "transparent" }}
+          >
+            <RightUlLI
+              style={isActive === "skills" ? { color: "#6e57e0" } : {}}
+            >
+              Skills
+            </RightUlLI>
+          </Link>
+          <Link
+            onClick={() => handleIsActive("projects")}
+            to="projects"
+            smooth={true}
+            duration={500}
+            spy={true}
+            // activeClass="active-link"
+            className="active-link"
+            // // style={{ background: "transparent" }}
+          >
+            <RightUlLI
+              style={isActive === "projects" ? { color: "#6e57e0" } : {}}
+            >
+              Projects
+            </RightUlLI>
+          </Link>
+          <Link
+            onClick={() => handleIsActive("contacts")}
+            to="contacts"
+            smooth={true}
+            duration={500}
+            spy={true}
+            // activeClass="active-link"
+            className="active-link"
+            // style={{ background: "transparent" }}
+          >
+            <RightUlLI
+              style={isActive === "contacts" ? { color: "#6e57e0" } : {}}
+            >
+              ContactMe
+            </RightUlLI>
+          </Link>
+
           {darkMode ? (
             <RightUlLI onClick={() => dispatch({ type: "TOGGLE" })}>
               <DarkModeOutlinedIcon

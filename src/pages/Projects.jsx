@@ -50,11 +50,11 @@ const Title = styled.h1`
 
 const Desc = styled.h3`
   background: ${(props) => props.theme.background};
-  color: ${(props) => props.theme.color};
+  color: ${(props) => props.theme.paraColor.color};
 `;
 const Projects = () => {
   return (
-    <Wrapper>
+    <Wrapper id="projects">
       <ProjectHeading>
         <Title>Projects</Title>
         <Desc>See My works</Desc>
