@@ -40,7 +40,7 @@ const Head1 = styled.h1`
   align-self: flex-start;
   /* padding-left: 10px; */
   position: absolute;
-  top: 20px;
+  top: 80px;
   left: 20px;
   background: transparent;
   color: ${(props) => props.theme.color};
@@ -48,7 +48,7 @@ const Head1 = styled.h1`
 const Para1 = styled.p`
   align-self: flex-start;
   position: absolute;
-  top: 70px;
+  top: 120px;
   left: 20px;
   color: #555;
   background: transparent;
@@ -86,7 +86,7 @@ const WrapperItems = styled.div`
   ${smallScreen`
     padding: 0 20px;
     position: relative;
-    top: -50px;
+    top: -10px;
 
   `}
 `;
@@ -98,6 +98,10 @@ const Img = styled.img`
   border-radius: 50%;
   border: 1px solid #ccc;
   object-fit: cover;
+  ${smallScreen`
+    width: 40vw;
+    height: 40vw;
+  `}
 `;
 
 const DescPara = styled.div`
@@ -158,7 +162,7 @@ const DownloadCv = styled.span`
     top: 0;
     left: 0;
     height: fit-content;
-    transform: translate(60%, 140%)
+    transform: translate(35%, 150%)
 
   `}
 `;

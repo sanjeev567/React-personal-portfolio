@@ -35,10 +35,11 @@ const ContactLinks = styled.div`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
   ${smallScreen`
-    margin-top: 50px;
+    margin-top: 90px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    gap: 2px;
+    margin-right: 30px;
   `}
 `;
 const SingleLink = styled.span`

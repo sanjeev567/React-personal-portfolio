@@ -39,7 +39,7 @@ const ProjectHeading = styled.div`
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};
   position: absolute;
-  top: 20px;
+  top: 80px;
   left: 20px;
 `;
 

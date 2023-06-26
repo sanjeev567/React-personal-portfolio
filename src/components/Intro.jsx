@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   gap: 40px;
   min-height: 60vh;
   position: relative;
-
+  margin-top: 12vh;
   /* Media queries for smaller device */
   ${smallScreen`
       flex-direction: column;
@@ -56,15 +56,18 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   position: relative;
   flex: 1;
   height: 45vh;
   background: ${(props) => props.theme.background};
+  /* border: 1px solid green; */
   ${smallScreen`
-    //  border: 2px solid green;
+    //  border: 2px solid yellow;
      transform: translateY(30px);
      overflow: hidden;
-     width: 400px;
+    width: 100%;
+    
   `}
 `;
 
@@ -75,15 +78,11 @@ const Img = styled.img`
   background: transparent;
   border-radius: 50%;
   object-fit: cover;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   animation: animate 5s infinite ease alternate;
   overflow: hidden;
-  ${smallScreen`
-    margin-top: 0px;
-    position: relative;
-    top: 0px;
-    left: 0px
-  `}
+  position: relative;
+  top: -10%;
 
   @keyframes animate {
     to {
@@ -185,18 +184,19 @@ const CanvasContainer = styled.div`
   width: 250px;
   height: 250px;
   position: absolute;
-  top: -60px;
-  left: 0;
+  top: -30px;
+  left: 1px;
   bottom: 0;
   right: 0;
   margin: auto;
-  background-color: black;
+  background-color: #f2f6f6;
+  /* border: 1px solid pink; */
 
   #canvasId > div > canvas {
     background: ${(props) => props.theme.background};
     ${smallScreen`
       position: relative;
-      top: 15px;
+      top: 0px;
       
     `}
   }

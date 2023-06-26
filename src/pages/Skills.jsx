@@ -8,18 +8,18 @@ const dummyData = [
   {
     type: "Frontend",
     skills: [
-      { name: "HTML", val: 10 },
+      { name: "HTML", val: 90 },
       { name: "CSS", val: 85 },
-      { name: "javaScript", val: 90 },
-      { name: "React", val: 50 },
+      { name: "javaScript", val: 80 },
+      { name: "React", val: 90 },
     ],
   },
   {
     type: "Backend",
     skills: [
       { name: "Node", val: 80 },
-      { name: "php", val: 85 },
-      { name: "django", val: 90 },
+      { name: "php", val: 75 },
+      { name: "django", val: 70 },
       { name: "flask", val: 50 },
     ],
   },
@@ -27,15 +27,12 @@ const dummyData = [
     type: "Database",
     skills: [
       { name: "Mysql", val: 80 },
-      { name: "noSql", val: 85 },
-      { name: "gresql", val: 90 },
-      { name: "graphql", val: 50 },
+      { name: "MongoDb", val: 85 },
+      { name: "PostgreSQL", val: 50 },
+      { name: "graphQL", val: 50 },
     ],
   },
 ];
-const frontendData = dummyData.filter((data) => data.type === "Frontend");
-const backendData = dummyData.filter((data) => data.type === "Backend");
-const databaseData = dummyData.filter((data) => data.type === "Database");
 
 const Skill = styled.div`
   display: flex;
@@ -45,7 +42,7 @@ const Skill = styled.div`
   flex-direction: column;
   position: relative;
   background: ${(props) => props.theme.background};
-  /* border: 1px solid #ccc; */
+  border-bottom: 1px solid #ccc;
 
   .arrowDown {
     position: absolute;
@@ -76,7 +73,7 @@ const Intro = styled.div`
   align-self: flex-start;
   justify-self: start;
   position: absolute;
-  top: 20px;
+  top: 80px;
   left: 20px;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};

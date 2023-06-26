@@ -98,7 +98,7 @@ const SingleSkill = ({ skillName, skillArr }) => {
           onClick={() => setDisplay(skillName.first)}
           style={
             display === skillName.first
-              ? { color: "green" }
+              ? { color: "gray" }
               : { cursor: "pointer" }
           }
         >
@@ -108,7 +108,7 @@ const SingleSkill = ({ skillName, skillArr }) => {
           onClick={() => setDisplay(skillName.second)}
           style={
             display === skillName.second
-              ? { color: "green" }
+              ? { color: "gray" }
               : { cursor: "pointer" }
           }
         >
@@ -118,7 +118,7 @@ const SingleSkill = ({ skillName, skillArr }) => {
           onClick={() => setDisplay(skillName.third)}
           style={
             display === skillName.third
-              ? { color: "green" }
+              ? { color: "gray" }
               : { cursor: "pointer" }
           }
         >

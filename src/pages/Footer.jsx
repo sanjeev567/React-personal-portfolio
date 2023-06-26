@@ -140,7 +140,7 @@ const Footer = () => {
           </SocialWrapper>
         </Social>
       </Box>
-      <Desc>All rights reversed, 2023, Sanjeev</Desc>
+      <Desc>Copyright @2023, All rights reversed</Desc>
     </FooterWrapper>
   );
 };

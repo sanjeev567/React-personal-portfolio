@@ -35,7 +35,7 @@ const Wrapper = styled.div`
 
 const ContactHeading = styled.div`
   position: absolute;
-  top: 20px;
+  top: 80px;
   left: 20px;
   background: ${(props) => props.theme.background};
   color: ${(props) => props.theme.color};

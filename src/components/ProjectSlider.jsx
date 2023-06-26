@@ -17,6 +17,8 @@ const Wrapper = styled.div`
   border: 1px solid #ccc;
   border-radius: 10px;
   padding: 5px;
+  position: relative;
+  top: 45px;
 
   .swiper {
     width: 98%;
